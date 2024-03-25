@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script> const birthYear = prompt("Введіть ваш рік народження:");
+    // Перевіряємо, чи користувач скасував введення
+    if (birthYear === null) {
+        alert("Шкода, що ви скасували введення року народження.");
+    } else {
+        const city = prompt("Введіть місто, у якому ви живете:");
+
+        // Перевіряємо, чи користувач скасував введення
+        if (city === null) {
+            alert("Шкода, що ви скасували введення міста.");
+        } else {
+            const sport = prompt("Введіть ваш улюблений вид спорту:");
+
+            // Перевіряємо, чи користувач скасував введення
+            if (sport === null) {
+                alert("Шкода, що ви скасували введення улюбленого виду спорту.");
+            } else {
+                const currentYear = new Date().getFullYear();
+                const age = currentYear - birthYear; // Визначаємо вік користувача
+
+                const capitals = {
+                    "київ": "України",
+                    "вашингтон": "США",
+                    "лондон": "Великої Британії"
+                };
+
+                let cityMessage = `Ти живеш у місті ${city}.`;
+                if (capitals.hasOwnProperty(city.toLowerCase())) {
+                    cityMessage = `Ти живеш у столиці ${capitals[city.toLowerCase()]}.`;
+                }
+
+                const sportCelebrities = {
+                    "бокс": "Хочеш бути, як Майк Тайсон",
+                    "теніс": "Зіграв би з Надалем",
+                    "футбол": "Шевченко був красунчиком"
+                };
+
+                let sportMessage = `Тобі подобається ${sport}.`;
+                if (sportCelebrities.hasOwnProperty(sport.toLowerCase())) {
+                    sportMessage = `Не може бути. ${sportCelebrities[sport.toLowerCase()]}.`;
+                }
+
+                alert(`Твій вік: ${age} років\n${cityMessage}\n${sportMessage}`);
+            }
+        }
+    }</script>
+
+    <title>Homework 7 Voloshyn</title>
+</head>
+<body>
+
+</body>
+</html>
